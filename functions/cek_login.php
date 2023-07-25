@@ -6,7 +6,7 @@ include 'koneksi.php';
 
 if (isset($_POST['btn_login'])) {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
-    $password = md5(mysqli_real_escape_string($koneksi, $_POST['password']));
+    $password = mysqli_real_escape_string($koneksi, $_POST['password']);
 
     $sql_user    = mysqli_query($koneksi, "SELECT * from user where username = '$username' and password = '$password'");
     $row_user    = mysqli_num_rows($sql_user);
